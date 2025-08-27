@@ -8,6 +8,7 @@ import (
 func SetupRoutes() *gin.Engine {
 	router := gin.Default()
 
+	router.POST("/register", handlers.RegisterHandler)
 	router.POST("/login", handlers.LoginHandler)
 	router.GET("/token", handlers.TokenHandler)
 
