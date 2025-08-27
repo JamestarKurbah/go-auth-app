@@ -1,30 +1,14 @@
 package main
 
 import (
-	"net/http"
-
-	"github.com/gorilla/mux"
+	"github.com/JamestarKurbah/go-auth-app/src/routes"
 )
 
 func main() {
-	r := mux.NewRouter()
-	SetupRoutes(r)
-
-	http.Handle("/", r)
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	router := routes.SetupRoutes()
+	if err := router.Run(":8080"); err != nil {
 		panic(err)
 	}
 }
 
-func SetupRoutes(r *mux.Router) {
-	r.HandleFunc("/login", LoginHandler).Methods("POST")
-	r.HandleFunc("/token", TokenHandler).Methods("GET")
-}
-
-func LoginHandler(w http.ResponseWriter, r *http.Request) {
-	// Handler logic for user login
-}
-
-func TokenHandler(w http.ResponseWriter, r *http.Request) {
-	// Handler logic for token generation
-}
+// ...existing code...
