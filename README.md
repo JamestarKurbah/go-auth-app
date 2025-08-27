@@ -1,7 +1,7 @@
 # Auth App
 
 ## Overview
-The `auth-app` is a simple authentication API built using Go. It provides endpoints for user login and token generation, utilizing the Gin framework for routing and handling HTTP requests.
+The `go-auth-app` is a simple authentication API built using Go. It provides endpoints for user login and token generation, utilizing the Gin framework for routing and handling HTTP requests.
 
 ## Project Structure
 ```
@@ -24,8 +24,8 @@ auth-app
 ## Setup Instructions
 1. **Clone the repository:**
    ```
-   git clone <repository-url>
-   cd auth-app
+   git clone https://github.com/JamestarKurbah/go-auth-app
+   cd go-auth-app
    ```
 
 2. **Install dependencies:**
