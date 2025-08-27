@@ -1,15 +1,15 @@
 package routes
 
 import (
-	"github.com/gorilla/mux"
-	"github.com/jamestarkurbah/go-auth-app/src/handlers"
+	"github.com/JamestarKurbah/go-auth-app/src/handlers"
+	"github.com/gin-gonic/gin"
 )
 
-func SetupRoutes() *mux.Router {
-	router := mux.NewRouter()
+func SetupRoutes() *gin.Engine {
+	router := gin.Default()
 
-	router.HandleFunc("/login", handlers.LoginHandler).Methods("POST")
-	router.HandleFunc("/token", handlers.TokenHandler).Methods("GET")
+	router.POST("/login", handlers.LoginHandler)
+	router.GET("/token", handlers.TokenHandler)
 
 	return router
 }
